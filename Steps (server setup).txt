@@ -1,0 +1,38 @@
+1. I used Google Cloud as my server that contained my honeypot.
+
+2. Once signed up and into google cloud, I created a VM that ran Ubuntu and configured it with basic settings.
+
+3. I then went into my VPC network, IP Addresses, External IP Addresses. Inside here I changed my IP address type from Ephemeral to Static.
+
+4. I then went back to my VM where I could now SSH into the server right from the Google Cloud webbpage.
+
+5. From that SSH session I ran "sudo apt-get update". I then configured /etc/ssh/sshd_config to open port 22. I also changed the "PasswordAuthentication" from "no" to "yes" allowing password authentication to be used when using SSH to connect to the server.
+
+6. Used useradd to create user "John".
+
+7. Once inside user "John" I created fake directories that the hacker would assume are real.
+
+8. Added user "Bob, Terry, Amy, Sam"
+
+9. Created group "finance"
+
+10. Added "Bob, Terry, Amy, Sam" to group "finance"
+
+11. Changed directory "finance" group permissions to only allow group members of "finance" to read write and execute.
+
+12. Added "Liam, Emma, Noah, Olivia" to group "hr"
+
+13. Added "Ava, Ethan, Sophia, Isabella" to group "sales"
+
+14. Added "Jackson, Mia, Aiden, Joe" to group "shared"
+
+15. Changed directory "hr, sales, shared and engineering" group permissions to only allow group members to read write and execute.
+
+16. Created a script that made fake .txt files containing fake user transactions in the finances directory.
+
+17. Installed python onto the server.
+
+18. Installed SSHPry2.0 from a git lab respitory onto the server using "git clone https://github.com/nopernik/SSHPry2.0.git". (this will be used to track the hackers SSH session movements)
+
+19. Installed MSMTP and Heirloom-mailx onto our server and configured cronjob settings to send a alert email every minute to "socanalystproject4@gmail.com" when a SSH session has been opened.
+

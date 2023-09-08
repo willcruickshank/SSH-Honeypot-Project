@@ -1,0 +1,7 @@
+1. When the hacker attempts to connect to our back end web server via SSH session with the IP given from our front end web server, the hacker will be redirected by SSH port forwarding and be forwarded to our honeypot server.
+
+*if asked for command: ssh -R <local_port>:<destination_host>:<destination_port> user@remote_server*
+
+2. Once the hacker was connected via SSH to our honeypot server, we had a email alert set to email our SOC analyst. Our SOC analyst then used SSHPry2.0 to connect to the hackers SSH session terminal. Once inside the hackers terminal, our SOC analyst was able to see/record every move the hacker made.
+
+3. Our SOC then used the command "lastlogs" to find the hackers IP. Once the hackers IP was found, it was permenatly banned/blacklisted from our real web server IP.

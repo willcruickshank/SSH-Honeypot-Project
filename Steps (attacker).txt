@@ -1,0 +1,11 @@
+1. Hacker found our front end web server, from here the hacker was able to find names of employee's, the IP by using nslookup and open ports with a nMap scan.q
+
+2. Now that the hacker knows the IP address and port 22 is open the hacker attempted to SSH into our back end server with the name "John". The hacker performed a SSH brute force with metasploit using module "auxiliary/scanner/ssh/ssh_login" with a password list. The hacker sucessful opened a SSH session onto our back end server.
+
+3. Once the hacker was succesfully connected onto our back end server via SSH session, the hacker checked if the user account "John" had sudo permissions. It did not. The hacker then   navigated to the directory "/home/company" to view the "finance" directory but was denied as he was not apart of the "finance" group.
+
+4. The hacker then used the "ls -la" command in the "/home/company" directory to find who the owner of the "finance" directory and group was. The hacker found the owner of the "finance" directory and group was "Bob". The hacker then performed a SSH brute force with metasploit using module "auxiliary/scanner/ssh/ssh_login" with a password list again. The password was eventually found and the hacker was now successfully logged into the user account "Bob". This is an example of the hacker using lateral movement amongst our back end server.
+
+5. Now that the hacker was logged in as "Bob" the hacker had access to the "finance" directory. The hacker moved into the "finance" directory and found many finicial data documents.
+
+6. The hacker then copied all the financial data documents to an offline storage and exited the SSH session.

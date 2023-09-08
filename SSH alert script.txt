@@ -1,0 +1,5 @@
+#!/bin/bash
+   # Extract information from audit.log
+   event_info=$(tail -n 1 /var/log/audit/audit.log | grep "sshd")
+   # Send an alert
+   echo "A SSH session has been started on 34.130.118.98 port 22, this is unusual activity. Please review and investigate this as soon as possible. $event_info" | mail -s "SSH Alert" socanalystproject4@gmail.com
