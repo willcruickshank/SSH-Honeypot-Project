@@ -1,2 +1,1 @@
-# SSH-Honeypot-Project
-A Honeypot on a live Google Cloud Ubuntu virtual machine to deflect unwanted traffic from a simulated organization's server IP address as well as track and log movement inside the Honeypot .
+A Honeypot on a live Google Cloud Ubuntu virtual machine to deflect unwanted traffic from a simulated organization's server IP address. In addition when a "suspect" successfully connected to the honeypot all movement and keystrokes were logged and or viewed live. The suspects IP address was also established and blacklisted on the simulated organization's actual IP address.
